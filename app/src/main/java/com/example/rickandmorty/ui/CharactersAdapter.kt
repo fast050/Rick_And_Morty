@@ -46,12 +46,6 @@ class CharactersAdapter: PagingDataAdapter<UiModel, RecyclerView.ViewHolder>(UIM
 
    class RickAndMortyListViewHolder(private val binding:RickAndMortyItemBinding):RecyclerView.ViewHolder(binding.root){
 
-       init {
-           binding.root.setOnClickListener {
-               Log.d("TAG", "$bindingAdapterPosition: ")
-               Toast.makeText(binding.root.context,bindingAdapterPosition.toString(),Toast.LENGTH_SHORT).show()
-           }
-       }
         fun bind(character: Character)
         {
             binding.apply {
@@ -95,7 +89,7 @@ class CharactersAdapter: PagingDataAdapter<UiModel, RecyclerView.ViewHolder>(UIM
 
     companion object {
         private val UIMODEL_COMPARATOR = object : DiffUtil.ItemCallback<UiModel>() {
-            override fun areItemsTheSame(oldItem: MainViewModel.UiModel, newItem: UiModel): Boolean {
+            override fun areItemsTheSame(oldItem: UiModel, newItem: UiModel): Boolean {
                 return (oldItem is UiModel.CharacterItem && newItem is UiModel.CharacterItem &&
                         oldItem.character.id == newItem.character.id) ||
                         (oldItem is UiModel.SeparatorItem && newItem is UiModel.SeparatorItem &&
