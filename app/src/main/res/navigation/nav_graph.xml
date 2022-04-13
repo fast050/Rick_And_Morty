@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.rickandmorty.ui.RickAndMortyListFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/rick_and_morty_list_fragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_setting_menu_item"
+            app:destination="@id/setting_menu_item" />
+    </fragment>
+    <fragment
+        android:id="@+id/setting_menu_item"
+        android:name="com.example.rickandmorty.ui.setting.MySettingsFragment"
+        android:label="setting" />
+    <fragment
+        android:id="@+id/aboutAppFragment"
+        android:name="com.example.rickandmorty.AboutAppFragment"
+        android:label="fragment_about_app"
+        tools:layout="@layout/fragment_about_app" /><action android:id="@+id/action_global_aboutAppFragment" app:destination="@id/aboutAppFragment"/>
+</navigation>

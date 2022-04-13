@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="Item"
+        android:id="@+id/setting_menu_item"
+        app:showAsAction="always"
+        android:menuCategory="secondary"
+        android:icon="@drawable/ic_baseline_settings_24"/>
+
+    <item android:id="@+id/about_app"
+         android:title="about"
+         app:showAsAction="never"/>
+
+</menu>
+
+    <!-->  menuCategory it will control the behavior of navigate back
+           from menu
+
+           if you set it as default when go back it will go to home navigate destenation
+           it you set it as secondary when go back it will return to the current destenation
+
+    <!-->
